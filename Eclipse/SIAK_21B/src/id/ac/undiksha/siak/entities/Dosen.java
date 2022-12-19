@@ -1,27 +1,24 @@
 package id.ac.undiksha.siak.entities;
 
-public class Dosen {
+public class Dosen extends Manusia{
 	private String 	nip;
-	private String 	nama;
-	private Boolean	jenisKelamin; //0 perempuan 1 laki-laki
-	private String 	alamat;
 	private String 	jabatan;
 	private String 	prodi;
 	private String 	jurusan;
 	private String 	fakultas;
 		
-	public Dosen(String nama, String nip, boolean jenisKelamin, String alamat, String jabatan, String prodi,
-			String jurusan, String fakultas) {
-		super();
-		this.nama = nama;
-		this.nip = nip;
-		this.jenisKelamin = jenisKelamin;
-		this.alamat = alamat;
-		this.jabatan = jabatan;
-		this.prodi = prodi;
-		this.jurusan = jurusan;
-		this.fakultas = fakultas;
-	}
+//	public Dosen(String nama, String nip, boolean jenisKelamin, String alamat, String jabatan, String prodi,
+//			String jurusan, String fakultas) {
+//		super();
+//		this.nama = nama;
+//		this.nip = nip;
+//		this.jenisKelamin = jenisKelamin;
+//		this.alamat = alamat;
+//		this.jabatan = jabatan;
+//		this.prodi = prodi;
+//		this.jurusan = jurusan;
+//		this.fakultas = fakultas;
+//	}
 
 	public Dosen() { //construktor untuk set default value
 		this.setNip("<NIP belum diisi>");
@@ -32,7 +29,20 @@ public class Dosen {
 		this.setJurusan("<Jurusan belum diisi>");
 		this.setFakultas("<Fakultas belum diisi>");
 	}
+	public Dosen(String nama, String alamat, boolean jenisKelamin) {
+		super(nama, alamat, jenisKelamin);
+		// TODO Auto-generated constructor stub
+	}
 	
+	public Dosen(String nip, String jabatan, String prodi, String jurusan, String fakultas) {
+	super();
+	this.nip = nip;
+	this.jabatan = jabatan;
+	this.prodi = prodi;
+	this.jurusan = jurusan;
+	this.fakultas = fakultas;
+}
+
 	public void printAllInfo() { //untuk printout semua data bersamaan
 		System.out.println("Nama: " + this.getNama());
 		System.out.println("NIP: " + this.getNip());
@@ -43,7 +53,7 @@ public class Dosen {
 		System.out.println("Fakultas: " + this.getFakultas());
 		
 		System.out.println("Jenis Kelamin: " + 
-		(jenisKelamin ? "Laki-laki" : "Perempuan")); //kondisi if True/False = ? True : Else
+		(this.getJenisKelamin() ? "Laki-laki" : "Perempuan")); //kondisi if True/False = ? True : Else
 		System.out.println("\n");
 	}
 	
@@ -54,27 +64,10 @@ public class Dosen {
 	public void setNip(String nip) {
 		this.nip = nip;
 	}
-	public String getNama() {
-		return nama;
-	}
-	public void setNama(String nama) {
-		this.nama = nama;
-	}
-	public boolean isJenisKelamin() {
-		return jenisKelamin;
-	}
-	public void setJenisKelamin(boolean jenisKelamin) {
-		this.jenisKelamin = jenisKelamin;
-	}
-	public String getAlamat() {
-		return alamat;
-	}
-	public void setAlamat(String alamat) {
-		this.alamat = alamat;
-	}
 	public String getJabatan() {
 		return jabatan;
 	}
+
 	public void setJabatan(String jabatan) {
 		this.jabatan = jabatan;
 	}

@@ -1,22 +1,42 @@
 package id.ac.undiksha.siak.entities;
 
-public class Mahasiswa {
+public class Mahasiswa extends Manusia{
 
-	private String nama;
-	private String alamat;
 	private String nim;
-	private Boolean jenisKelamin; // 0 untuk perempuan, 1 untuk laki-laki
 	private String prodi;
 	private String jurusan;
 	private String fakultas;
 	
+	public Mahasiswa(String nim, String prodi, String jurusan, String fakultas) {
+		super();
+		this.nim = nim;
+		this.prodi = prodi;
+		this.jurusan = jurusan;
+		this.fakultas = fakultas;
+	}
 	public Mahasiswa(){
+		super();
 		this.setNama("<nama belum diisi>");
 		this.setAlamat("<Alamat belum diisi>");
 		this.setNim("<NIM belum diisi>");
 		this.setProdi("<Prodi belum diisi>");
 		this.setFakultas("<Fakultas belum diisi>");
 		this.setJurusan("<Jurusan belum diisi>");
+	}
+	
+	public Mahasiswa(String nama, String alamat, boolean jenisKelamin) {
+		super(nama, alamat, jenisKelamin);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Mahasiswa(String nama, String alamat, boolean jenisKelamin,
+			String nim, String prodi, String jurusan, String fakultas
+			) {
+		super(nama, alamat, jenisKelamin);
+		this.nim = nim;
+		this.prodi = prodi;
+		this.jurusan = jurusan;
+		this.fakultas = fakultas;
 	}
 	
 	public void printAllInfo() {
@@ -28,37 +48,18 @@ public class Mahasiswa {
 		System.out.println("Fakultas: " + this.getFakultas());
 		
 		System.out.println("Jenis Kelamin: " + 
-				(jenisKelamin ? "Laki-laki" : "Perempuan"));
+				(this.getJenisKelamin() ? "Laki-laki" : "Perempuan"));
 		System.out.println("\n");
 	}
 	
-	public String getNama() {
-		return this.nama;
-	}
-	
-	public Mahasiswa(String nama, String alamat, String nim, Boolean jenisKelamin, String prodi, String jurusan,
-			String fakultas) {
-		super();
-		this.nama = nama;
-		this.alamat = alamat;
-		this.nim = nim;
-		this.jenisKelamin = jenisKelamin;
-		this.prodi = prodi;
-		this.jurusan = jurusan;
-		this.fakultas = fakultas;
-	}
-
-	public void setNama(String nama) {
-		this.nama = nama;
-	}
-
-	public String getAlamat() {
-		return alamat;
-	}
-
-	public void setAlamat(String alamat) {
-		this.alamat = alamat;
-	}
+//	public Mahasiswa(String nama, String alamat, String nim, Boolean jenisKelamin, String prodi, String jurusan,
+//			String fakultas) {
+//		super();
+//		this.nim = nim;
+//		this.prodi = prodi;
+//		this.jurusan = jurusan;
+//		this.fakultas = fakultas;
+//	}
 
 	public String getNim() {
 		return nim;
@@ -66,14 +67,6 @@ public class Mahasiswa {
 
 	public void setNim(String nim) {
 		this.nim = nim;
-	}
-
-	public Boolean getJenisKelamin() {
-		return jenisKelamin;
-	}
-
-	public void setJenisKelamin(Boolean jenisKelamin) {
-		this.jenisKelamin = jenisKelamin;
 	}
 
 	public String getProdi() {

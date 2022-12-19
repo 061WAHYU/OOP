@@ -1,10 +1,7 @@
 package id.ac.undiksha.siak.entities;
 
-public class Pegawai {
+public class Pegawai extends Manusia {
 	private String 	nip;
-	private String 	nama;
-	private boolean	jenisKelamin; //0 perempuan 1 laki-laki
-	private String 	alamat;
 	private String 	jabatan;
 	private String 	unit;
 	
@@ -17,6 +14,18 @@ public class Pegawai {
 		this.setUnit("<Unit belum diisi>");
 	}
 	
+	public Pegawai(String nama, String alamat, boolean jenisKelamin) {
+		super(nama, alamat, jenisKelamin);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Pegawai(String nip, String jabatan, String unit) {
+		super();
+		this.nip = nip;
+		this.jabatan = jabatan;
+		this.unit = unit;
+	}
+
 	public void printAllInfo() { //untuk printout semua data bersamaan
 		System.out.println("Nama: " + this.getNama());
 		System.out.println("NIP: " + this.getNip());
@@ -25,7 +34,7 @@ public class Pegawai {
 		System.out.println("Unit: " + this.getUnit());
 		
 		System.out.println("Jenis Kelamin: " + 
-		(jenisKelamin ? "Laki-laki" : "Perempuan")); //kondisi if True/False = ? True : Else
+		(this.getJenisKelamin() ? "Laki-laki" : "Perempuan")); //kondisi if True/False = ? True : Else
 	}
 	
 	//get n set
@@ -34,24 +43,6 @@ public class Pegawai {
 	}
 	public void setNip(String nip) {
 		this.nip = nip;
-	}
-	public String getNama() {
-		return nama;
-	}
-	public void setNama(String nama) {
-		this.nama = nama;
-	}
-	public boolean isJenisKelamin() {
-		return jenisKelamin;
-	}
-	public void setJenisKelamin(boolean jenisKelamin) {
-		this.jenisKelamin = jenisKelamin;
-	}
-	public String getAlamat() {
-		return alamat;
-	}
-	public void setAlamat(String alamat) {
-		this.alamat = alamat;
 	}
 	public String getJabatan() {
 		return jabatan;

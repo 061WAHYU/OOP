@@ -1,41 +1,32 @@
 package id.ac.undiksha.siak;
 
-import id.ac.undiksha.siak.entities.Mahasiswa;
-import id.ac.undiksha.siak.entities.Dosen;
-import id.ac.undiksha.siak.entities.Pegawai;
+import id.ac.undiksha.siak.entities.*;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
+		//Mahasiswa
+		Mahasiswa mhs1 = new Mahasiswa();
+		System.out.print(mhs1.getNim());
 		
-		Mahasiswa mhs1 = new Mahasiswa(
-				"Budi",
-				"Denpasar",
-				"123456789",
-				true,
-				"Ilmu Komputer",
-				"Teknik Informatika",
-				"FTK"	
-		);
-		System.out.println("Data Mahasiswa:");
-		mhs1.printAllInfo();
+		Manusia mhs2 = new Mahasiswa();
+		System.out.print(mhs2.getNama());
 		
-		Dosen dosen1 = new Dosen(
-				"A.A. Gede Yudhi Paramartha, S.Kom., M.Kom.",
-				"198806222015041003",
-				true,
-				"Singaraja",
-				"Koorprodi Ilmu Komputer",
-				"Ilmu Komputer",
-				"Teknik Informatika",
-				"FTK"
-				);
-		System.out.println("Data Dosen:");
-		dosen1.printAllInfo();
-		Pegawai pgw1 = new Pegawai();
-		System.out.println("Data Pegawai:");
-		pgw1.printAllInfo();
+
+		//Dosen
+		Manusia dsn = new Dosen();
+		System.out.println(dsn.getNama());
+		
+		Dosen dsn1 = new Dosen();
+		System.out.println(dsn1.getNip());
+		
+		//Pegawai
+		Manusia pgw = new Dosen();
+		System.out.println(pgw.getNama());
+		
+		Dosen pgw2 = new Dosen();
+		System.out.println(pgw2.getNip());
 	}
 
 }
