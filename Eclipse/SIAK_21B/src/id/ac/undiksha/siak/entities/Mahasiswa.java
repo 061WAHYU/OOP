@@ -1,27 +1,23 @@
 package id.ac.undiksha.siak.entities;
 
+import id.ac.undiksha.organisasi.Prodi;
+
 public class Mahasiswa extends Manusia{
 
 	private String nim;
-	private String prodi;
-	private String jurusan;
-	private String fakultas;
+	private Prodi prodi;
 	
 	public Mahasiswa(String nim, String prodi, String jurusan, String fakultas) {
 		super();
 		this.nim = nim;
-		this.prodi = prodi;
-		this.jurusan = jurusan;
-		this.fakultas = fakultas;
+		
 	}
 	public Mahasiswa(){
 		super();
 		this.setNama("<nama belum diisi>");
 		this.setAlamat("<Alamat belum diisi>");
 		this.setNim("<NIM belum diisi>");
-		this.setProdi("<Prodi belum diisi>");
-		this.setFakultas("<Fakultas belum diisi>");
-		this.setJurusan("<Jurusan belum diisi>");
+	
 	}
 	
 	public Mahasiswa(String nama, String alamat, boolean jenisKelamin) {
@@ -30,36 +26,23 @@ public class Mahasiswa extends Manusia{
 	}
 	
 	public Mahasiswa(String nama, String alamat, boolean jenisKelamin,
-			String nim, String prodi, String jurusan, String fakultas
+			String nim, String kodeProdi, String namaProdi
 			) {
+		
 		super(nama, alamat, jenisKelamin);
 		this.nim = nim;
-		this.prodi = prodi;
-		this.jurusan = jurusan;
-		this.fakultas = fakultas;
+		
 	}
 	
 	public void printAllInfo() {
 		System.out.println("Nama: " 	+ this.getNama());
 		System.out.println("Alamat: " 	+ this.getAlamat());
 		System.out.println("NIM: " 		+ this.getNim());
-		System.out.println("Prodi: " 	+ this.getProdi());
-		System.out.println("Jurusan: " 	+ this.getJurusan());
-		System.out.println("Fakultas: " + this.getFakultas());
 		
 		System.out.println("Jenis Kelamin: " + 
 				(this.getJenisKelamin() ? "Laki-laki" : "Perempuan"));
 		System.out.println("\n");
 	}
-	
-//	public Mahasiswa(String nama, String alamat, String nim, Boolean jenisKelamin, String prodi, String jurusan,
-//			String fakultas) {
-//		super();
-//		this.nim = nim;
-//		this.prodi = prodi;
-//		this.jurusan = jurusan;
-//		this.fakultas = fakultas;
-//	}
 
 	public String getNim() {
 		return nim;
@@ -68,28 +51,11 @@ public class Mahasiswa extends Manusia{
 	public void setNim(String nim) {
 		this.nim = nim;
 	}
-
-	public String getProdi() {
+	public Prodi getProdi() {
 		return prodi;
 	}
-
-	public void setProdi(String prodi) {
+	public void setProdi(Prodi prodi) {
 		this.prodi = prodi;
 	}
 
-	public String getJurusan() {
-		return jurusan;
-	}
-
-	public void setJurusan(String jurusan) {
-		this.jurusan = jurusan;
-	}
-
-	public String getFakultas() {
-		return fakultas;
-	}
-
-	public void setFakultas(String fakultas) {
-		this.fakultas = fakultas;
-	}
 }

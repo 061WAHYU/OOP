@@ -1,6 +1,6 @@
 package id.ac.undiksha.siak.entities;
 
-public class Manusia {
+public abstract class Manusia {
 
 	private String 	nama;
 	private String 	alamat;

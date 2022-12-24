@@ -7,26 +7,12 @@ public class Main {
 	public static void main(String[] args) {
 		
 		//Mahasiswa
+		System.out.println("Data Mahasiswa");
 		Mahasiswa mhs1 = new Mahasiswa();
-		System.out.print(mhs1.getNim());
+		System.out.println(mhs1.getNim());
 		
-		Manusia mhs2 = new Mahasiswa();
-		System.out.print(mhs2.getNama());
+		mhs1.getProdi().getKoordinatorProdi().getNama();
 		
-
-		//Dosen
-		Manusia dsn = new Dosen();
-		System.out.println(dsn.getNama());
-		
-		Dosen dsn1 = new Dosen();
-		System.out.println(dsn1.getNip());
-		
-		//Pegawai
-		Manusia pgw = new Dosen();
-		System.out.println(pgw.getNama());
-		
-		Dosen pgw2 = new Dosen();
-		System.out.println(pgw2.getNip());
 	}
 
 }
